@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>guess-my-mumber</title>
 
     <!-- normalize css -->
@@ -16,9 +16,61 @@
 
     <!-- css -->
     <link rel="stylesheet" href="./css/main.css" />
-</head>
-<body>
-    <div class="test"></div>
-  <script src="./script.js"></script>
-</body>
+  </head>
+  <body>
+    <div class="top-side">
+      <div class="btn-group">
+        <button type="button" class="btn btn--sm btn--restart">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="26"
+            viewBox="0 0 25 26"
+            fill="none"
+          >
+            <path
+              d="M18.9426 4.13499C14.3661 0.939601 8.02105 1.38381 3.93696 5.46791C-0.645654 10.0505 -0.645653 17.4804 3.93696 22.063C8.51956 26.6457 15.9495 26.6457 20.5321 22.063C23.5965 18.9986 24.7378 15.0969 23.5709 10.7282C23.3624 9.94762 22.5607 9.48369 21.78 9.69223C20.9993 9.90063 20.5356 10.7025 20.744 11.4831C21.5299 14.426 20.7674 17.6899 18.4631 19.994L18.8166 20.3476L18.4631 19.994C15.0231 23.434 9.44586 23.434 6.0059 19.994C2.56591 16.5541 2.56591 10.9768 6.0059 7.53685C8.7915 4.75123 12.9792 4.22125 16.2979 5.94731H14.9581C14.1502 5.94731 13.4952 6.60228 13.4952 7.41027C13.4952 8.21824 14.1502 8.87323 14.9581 8.87323H20.4055C21.2135 8.87323 21.8685 8.21824 21.8685 7.41027V1.96296C21.8685 1.15497 21.2135 0.5 20.4055 0.5C19.5974 0.5 18.9426 1.15502 18.9426 1.96296V4.13499Z"
+              fill="#EEEEEE"
+              stroke="#EEEEEE"
+            />
+          </svg>
+        </button>
+        <button type="button" class="btn btn--sm btn--rule">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="28"
+            viewBox="0 0 22 28"
+            fill="none"
+          >
+            <path
+              d="M5.51978 15.3333H13.5198M5.51978 20.6667H16.1864M12.1864 2H1.51978V4.66667M12.1864 2H13.5198L20.1864 8.66667V10M12.1864 2V7.33333C12.1864 8.66667 13.5198 10 14.8531 10H20.1864M20.1864 10V14M1.51978 11.3333V26H20.1864V19.3333"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="game-info  font-zh">
+        <p class="game__instruction">（請輸入 <span class="font-en">1~20</span> 的數字）</p>
+        <p class="game__difficulty">當前挑戰難度：🍼 幼幼班</p>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="answer-area">
+      <h1 class="answer-text">猜猜我是多少！</h1>
+      <div class="answer font-en"><img src="./image/svg-question-mark.png" alt=""></div>
+    </div>
+    <div class="guess-area">
+      <input type="number" name="" id=""/>
+      <button type="button" class="btn btn--lg btn--submit">確認</button>
+    </div>
+    <div class="score-area">
+      <p class="chance">💯 剩餘機會：<span class="font-en">9</span></p>
+      <p class="high-score">🏅 歷史高分：<span class="font-en">48</span></p>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
