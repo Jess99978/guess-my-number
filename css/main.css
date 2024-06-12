@@ -4,4 +4,9 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  background: linear-gradient(270deg, #070708 0%, #1A1C28 40%, #2D3248 100%);
+}
+
 /*# sourceMappingURL=main.css.map */

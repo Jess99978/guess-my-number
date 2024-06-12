@@ -1,5 +1,6 @@
 // typography
-$font-family:"Jeju Hallasan","Roboto", sans-serif;
+$font-family-en:"Jeju Hallasan", sans-serif;
+$font-family-zh:"Roboto", sans-serif;
 
 // color
 // primary-color
@@ -15,9 +16,15 @@ $light-white:#eeeeee;
 
 // linear-gradient
 $black-linear:linear-gradient(270deg, #070708 0%, #1A1C28 40%, #2D3248 100%);
-$green-linear: linear-gradient(195deg, rgba(158, 218, 209, 0.90) 11.27%, rgba(61, 179, 162, 0.90) 90.4%);
+$green-linear-10: linear-gradient(195deg, rgba(158, 218, 209, 0.1) 11.27%, rgba(61, 179, 162, 0.1) 90.4%);
+$green-linear-30: linear-gradient(195deg, rgba(158, 218, 209, 0.3) 11.27%, rgba(61, 179, 162, 0.3) 90.4%);
+$green-linear-90: linear-gradient(195deg, rgba(158, 218, 209, 0.9) 11.27%, rgba(61, 179, 162, 0.9) 90.4%);
 $pink-linear:linear-gradient(195deg, rgba(96, 27, 61, 0.90) 11.27%, rgba(198, 56, 126, 0.90) 90.4%);
 
 // box-shadow
-$modal-shadow:box-shadow(0px 4px 32px 0px rgba(0, 0, 0, 0.35));
-$btn-shadow:box-shadow(0px -2px 5px 0px rgba(0, 0, 0, 0.25) inset);
+$modal-shadow:(0px 4px 32px 0px rgba(0, 0, 0, 0.35));
+$btn-shadow:(0px -2px 5px 0px rgba(0, 0, 0, 0.25));
+$text-shadow:(2px 5px 5px rgba(0, 0, 0, 0.4));
+// border-radius
+$border-radius-lg:10px;
+$border-radius-sm:3px;
