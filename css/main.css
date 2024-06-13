@@ -58,10 +58,19 @@ p {
 .btn--sm {
   padding: 12px 18px;
   background: rgba(47, 149, 143, 0.8);
+  transition: 0.3s ease-in-out;
+}
+.btn--sm:hover {
+  background: #2F958F;
 }
 .btn--lg {
   padding: 15px 40px;
   background: #2F958F;
+  transition: 0.2s ease-in-out;
+}
+.btn--lg:hover {
+  background: rgba(47, 149, 143, 0.9333333333);
+  box-shadow: 0px -4px 10px 0px rgba(0, 0, 0, 0.25) inset;
 }
 .btn--submit {
   color: #ffffff;

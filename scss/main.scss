@@ -51,14 +51,19 @@ p {
   &--sm {
     padding: 12px 18px;
     background: $dark-green-80;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: $dark-green;
+    }
   }
   &--lg {
     padding: 15px 40px;
     background: $dark-green;
-  }
-  &--restart {
-  }
-  &--rule {
+    transition: 0.2s ease-in-out;
+    &:hover {
+      background: #2f958fee;
+      box-shadow: (0px -4px 10px 0px rgba(0, 0, 0, 0.25) inset);
+    }
   }
   &--submit {
     color: $white;
@@ -131,18 +136,18 @@ p {
     background: none;
     padding: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    &:focus{
-        outline: none;
+    &:focus {
+      outline: none;
     }
   }
 }
-.score-area{
-    @include flex-center(column,$align:flex-start);
-    gap: 30px;
-    font-size: 28px;
-    font-weight: 500;
-    color: $white;
-    position: absolute;
-    right: 250px;
-    bottom: 215px;
+.score-area {
+  @include flex-center(column, $align: flex-start);
+  gap: 30px;
+  font-size: 28px;
+  font-weight: 500;
+  color: $white;
+  position: absolute;
+  right: 250px;
+  bottom: 215px;
 }
