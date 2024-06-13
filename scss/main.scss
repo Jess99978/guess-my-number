@@ -37,7 +37,6 @@ p {
   padding: 20px 40px;
 }
 //-------------button-----------------
-// TODO 幫按鈕加上 hover 效果
 .btn-group {
   @include flex-center;
   gap: 25px;
@@ -70,6 +69,14 @@ p {
     font-size: 20px;
     font-weight: 500;
   }
+  &--again {
+    color: $white;
+    font-size: 28px;
+    font-weight: 500;
+    position: absolute;
+    right: 40%;
+    top: 73%;
+  }
 }
 .game {
   &-info {
@@ -99,23 +106,22 @@ p {
   @include flex-center;
   font-size: 100px;
   color: $white;
+  position: absolute;
+  left: calc(50% - 176px);
+  top: calc(50% - 107px);
   width: 253px;
   height: 204px;
   background: $dark-green;
   border-radius: $border-radius-sm;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  &-area {
-    @include flex-center(column);
-    gap: 50px;
-    position: absolute;
-    top: calc(50% - 222px);
-    left: calc(50% - 219px);
-  }
   &-text {
     font-size: 60px;
     font-weight: 600;
     color: $white;
     letter-spacing: 3px;
+    position: absolute;
+    top: calc(50% - 220px);
+    left: calc(50% - 235px);
   }
 }
 .guess-area {
@@ -150,4 +156,47 @@ p {
   position: absolute;
   right: 250px;
   bottom: 215px;
+}
+// ---------------modal-----------------------
+  .modal {
+  @include flex-center(column, $align: flex-start);
+  border-radius: $border-radius-lg;
+  background: $dark-green;
+  box-shadow: $modal-shadow;
+  color: $white;
+  position: absolute;
+  z-index: 10;
+  &.rule {
+    padding: 30px 40px;
+    gap: 25px;
+  }
+}
+.rule__content {
+  @include flex-center(column, $align: flex-start);
+  h3 {
+    font-size: 28px;
+  }
+  li {
+    font-size: 20px;
+    line-height: normal;
+  }
+}
+.svg {
+  &__close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    cursor: pointer;
+  }}
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(85, 85, 85, 0.15);
+  backdrop-filter: blur(5px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
 }

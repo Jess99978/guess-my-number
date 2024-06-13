@@ -139,6 +139,15 @@ p {
   font-weight: 600;
 }
 
+.warning {
+  position: absolute;
+  bottom: 15%;
+  color: #9d3535;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 .rule__content {
   display: flex;
   flex-direction: column;

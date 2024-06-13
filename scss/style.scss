@@ -119,6 +119,14 @@ p {
     font-weight: 600;
   }
 }
+.warning {
+    position: absolute;
+    bottom: 15%;
+  color: #9d3535;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
 .rule__content {
   @include flex-center(column, $align: flex-start);
   gap: 16px;
@@ -159,19 +167,19 @@ p {
     height: 20px;
     border: 2px solid $white;
     border-radius: 50%;
-        cursor: pointer;
+    cursor: pointer;
     &::after {
-     content: "";
-    width: 10px;
-    height: 10px;
-    background-color: $white;
-    border-radius: 50%;
-    opacity: 0;
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: $white;
+      border-radius: 50%;
+      opacity: 0;
     }
   }
 }
-.radio__group input[type="radio"]:checked + .radio__btn::after{
-    opacity: 1;
+.radio__group input[type="radio"]:checked + .radio__btn::after {
+  opacity: 1;
 }
 // --------------svg-----------------
 

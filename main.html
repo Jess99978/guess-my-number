@@ -17,7 +17,57 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body>
+  <body data-page="page2">
+    <div class="overlay hidden"></div>
+    <div class="modal rule hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="37"
+        height="34"
+        viewBox="0 0 37 34"
+        fill="none"
+        class="svg__close"
+      >
+        <path
+          d="M18.3333 31.9037C27.3539 31.9037 34.6666 25.2096 34.6666 16.9519C34.6666 8.69418 27.3539 2 18.3333 2C9.31266 2 2 8.69418 2 16.9519C2 25.2096 9.31266 31.9037 18.3333 31.9037Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+        />
+        <path
+          d="M22.4166 13.2139L14.25 20.6898M14.2499 13.2139L22.4166 20.6898"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+      </svg>
+      <div class="rule__content">
+        <h3>遊戲規則</h3>
+        <ul>
+          <li>使用者輸入數字並提交後，會提示數字太大或太小</li>
+          <li>有 10 次機會猜中數字</li>
+          <li>依照不同的挑戰難度數字範圍不同</li>
+          <li>幼幼班 1-20，中級班 1-50，大師班1-100</li>
+          <li>10 次內猜中即獲勝，否則遊戲結束</li>
+        </ul>
+      </div>
+      <div class="rule__content">
+        <h3>計分方式</h3>
+        <ul>
+          <li>幼幼班：分數 = 剩餘機會 * 1（一次命中 bonus：30 分）</li>
+          <li>中級班：分數 = 剩餘機會 * 2（一次命中 bonus：50 分）</li>
+          <li>大師班：分數 = 剩餘機會 * 3（一次命中 bonus：100 分）</li>
+        </ul>
+      </div>
+      <div class="rule__content">
+        <h3>舉例</h3>
+        <ol>
+          <li>
+            小北選擇幼幼班難度，在剩下 5 次機會時猜中，分數 = 5 * 1 = 5 分
+          </li>
+          <li>小勳選擇大師班難度，猜第一次試就直接命中，分數 = 100 分</li>
+        </ol>
+      </div>
+    </div>
     <div class="top-side">
       <div class="btn-group">
         <button type="button" class="btn btn--sm btn--restart">
@@ -53,24 +103,30 @@
           </svg>
         </button>
       </div>
-      <div class="game-info  font-zh">
-        <p class="game__instruction">（請輸入 <span class="font-en">1~20</span> 的數字）</p>
-        <p class="game__difficulty">當前挑戰難度：🍼 幼幼班</p>
+      <div class="game-info font-zh">
+        <p class="game__instruction">
+          （請輸入
+          <span class="font-en game__instruction-number"></span> 的數字）
+        </p>
+        <p class="game__difficulty"></p>
       </div>
     </div>
     <div class="line"></div>
-    <div class="answer-area">
-      <h1 class="answer-text">猜猜我是多少！</h1>
-      <div class="answer font-en"><img src="./image/svg-question-mark.png" alt=""></div>
+    <h1 class="answer-text">猜猜我是多少！</h1>
+    <div class="answer font-en">
+      <img src="./image/svg-question-mark.png" alt="" class="img-question" />
     </div>
     <div class="guess-area">
-      <input type="number" name="" id=""/>
+      <input type="number" name="" id="" class="input-number" />
       <button type="button" class="btn btn--lg btn--submit">確認</button>
     </div>
     <div class="score-area">
-      <p class="chance">💯 剩餘機會：<span class="font-en">9</span></p>
-      <p class="high-score">🏅 歷史高分：<span class="font-en">48</span></p>
+      <p class="chance">💯 剩餘機會：<span class="font-en"></span></p>
+      <p class="high-score">🏅 歷史高分：<span class="font-en"></span></p>
     </div>
+    <button type="button" class="btn btn--lg btn--again hidden">
+      再玩一次
+    </button>
     <script src="./script.js"></script>
   </body>
 </html>

@@ -15,7 +15,7 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body data-page="page1">
     <div class="main">
       <div class="title">
         <h1 class="font-en">Guess Number</h1>
@@ -101,7 +101,7 @@
       <h3>選擇挑戰難度</h3>
       <div class="radio">
         <label class="radio__group">
-          <input type="radio" name="difficulty" value="beginner" />
+          <input type="radio" name="difficulty" value="1"/>
           <span class="radio__btn"></span>
           幼幼班
         </label>
@@ -109,7 +109,7 @@
           ><input
             type="radio"
             name="difficulty"
-            value="intermediate"
+            value="2"
           />
           <span class="radio__btn"></span>
           中級班
@@ -118,11 +118,12 @@
           <input
             type="radio"
             name="difficulty"
-            value="advanced"
+            value="3"
           /><span class="radio__btn"></span>大師班</label
         >
       </div>
-      <a href="./main.html" type="button" class="btn--start-game">
+      <div class="warning hidden">!! 請選擇挑戰難度再開始遊戲 !!</div>
+      <a  type="button" class="btn--start-game">
         進入遊戲<svg
           xmlns="http://www.w3.org/2000/svg"
           width="19"
