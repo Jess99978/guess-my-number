@@ -193,6 +193,8 @@ p {
 .modal.rule {
   padding: 30px 40px;
   gap: 25px;
+  right: 30%;
+  top: 20%;
 }
 
 .rule__content {
@@ -223,6 +225,22 @@ p {
   background: rgba(85, 85, 85, 0.15);
   backdrop-filter: blur(5px);
   z-index: 5;
+}
+
+.img-celebrate {
+  position: absolute;
+}
+.img-celebrate-lg {
+  left: 23%;
+}
+.img-celebrate-left {
+  top: 10%;
+  left: 15%;
+}
+.img-celebrate-right {
+  top: 10%;
+  right: 15%;
+  transform: rotate(270deg);
 }
 
 .hidden {

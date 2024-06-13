@@ -1,13 +1,13 @@
 "use strict";
 const btnStart = document.querySelector(".btn-start");
 const btnRule = document.querySelector(".btn-rule");
+const btnRuleP2 = document.querySelector(".btn--rule");
 const btnClose = document.querySelector(".svg__close");
 const btnStartGame = document.querySelector(".btn--start-game");
 const btnSubmit = document.querySelector(".btn--submit");
 const btnRestart = document.querySelector(".btn--restart");
 const btnAgain = document.querySelector(".btn--again");
 const modalRule = document.querySelector(".rule");
-const modalRuleP2 = document.querySelector(".btn--rule");
 const modalDifficulty = document.querySelector(".difficulty");
 const overlay = document.querySelector(".overlay");
 const warning = document.querySelector(".warning");
@@ -19,6 +19,7 @@ const chanceText = document.querySelector(".chance");
 const chance = document.querySelector(".chance span");
 const highScore = document.querySelector(".high-score");
 const line = document.querySelector(".line");
+const imgCelebrate = document.querySelectorAll(".img-celebrate");
 const loseBackground =
   "linear-gradient(195deg, rgba(96, 27, 61) 11.27%, rgba(198, 56, 126) 90.4%)";
 let selectedDifficulty = 0;
@@ -33,7 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
       overlay.classList.remove("hidden");
       modalDifficulty.classList.remove("hidden");
     });
-
+    btnRule.addEventListener("click", () => {
+      modalRule.classList.remove("hidden");
+      overlay.classList.remove("hidden");
+    });
+    btnClose.addEventListener("click", () => {
+      modalRule.classList.add("hidden");
+      overlay.classList.add("hidden");
+    });
+    overlay.addEventListener("click", () => {
+      modalRule.classList.add("hidden");
+      overlay.classList.add("hidden");
+    });
     btnStartGame.addEventListener("click", function () {
       const selectedValue = document.querySelector(
         "input[name=difficulty]:checked"
@@ -66,11 +78,34 @@ document.addEventListener("DOMContentLoaded", function () {
       gameInstruction.textContent = "1-100";
       answer = Math.floor(Math.random() * 100 + 1);
     }
+    console.log(answer);
     // TODO 加上 鍵盤事件 enter 送出
     btnSubmit.addEventListener("click", function () {
       console.log(answer);
       const inputNumber = Number(input.value);
-      console.log(Number(inputNumber));
+      console.log(inputNumber);
+      // 驗證使用者填入範圍外的數字的情況
+      if (selectedDifficulty === 1 && (inputNumber <= 0 || inputNumber > 20)) {
+        answerText.innerHTML = `請輸入 <span class="font-en">1-20</span> 的數字`;
+        answerText.style.fontSize = "50px";
+        return;
+      } else if (
+        selectedDifficulty === 2 &&
+        (inputNumber <= 0 || inputNumber > 50)
+      ) {
+        answerText.innerHTML = `請輸入 <span class="font-en">1-50</span> 的數字`;
+        answerText.style.fontSize = "50px";
+        return;
+      } else if (
+        selectedDifficulty === 3 &&
+        (inputNumber <= 0 || inputNumber > 100)
+      ) {
+        answerText.innerHTML = `請輸入 <span class="font-en">1-100</span> 的數字`;
+        answerText.style.fontSize = "50px";
+        answerText.style.left = "35%";
+        return;
+      }
+
       // 用完十次機會，遊戲結束
       if (inputNumber !== answer && remainedChance <= 1) {
         answerText.textContent = "Game Over";
@@ -105,44 +140,98 @@ document.addEventListener("DOMContentLoaded", function () {
         remainedChance--;
         chance.textContent = remainedChance;
       } else if (inputNumber === answer) {
-        // 十次內成功猜到答案，遊戲結束
-        answerText.textContent = "猜對了 🥳 你太厲害了！";
-        answerText.style.fontSize = "60px";
-        answerText.style.left = "32%";
-        document
-          .querySelectorAll(
-            ".btn--restart,.btn--rule,.game-info,.img-question,.guess-area"
-          )
-          .forEach((e) => {
-            e.classList.add("hidden");
+        // 一次命中
+        if (inputNumber === answer && remainedChance > 9) {
+          answerText.textContent = "一次命中 🫢！你快去買樂透！";
+          answerText.style.fontSize = "60px";
+          answerText.style.left = "32%";
+          document
+            .querySelectorAll(
+              ".btn--restart,.btn--rule,.game-info,.img-question,.guess-area"
+            )
+            .forEach((e) => {
+              e.classList.add("hidden");
+            });
+          document.querySelector(".score-area").style.right = "54%";
+          document.querySelector(".score-area").style.bottom = "185px";
+          btnAgain.classList.remove("hidden");
+          btnAgain.addEventListener("click", function () {
+            location.reload();
           });
-        document.querySelector(".score-area").style.right = "54%";
-        document.querySelector(".score-area").style.bottom = "185px";
+          // 一次命中時的特殊樣式
+          imgCelebrate.forEach((img) => {
+            img.classList.remove("hidden");
+          });
+          // 一次命中的分數計算
+          const calcScoreBonus = function () {
+            if (selectedDifficulty === 1) {
+              return 20;
+            } else if (selectedDifficulty === 2) {
+              return 50;
+            } else if (selectedDifficulty === 3) {
+              return 100;
+            }
+          };
+          const thisTimeScore = calcScoreBonus();
+          chanceText.innerHTML = `💯 本次分數：<span class="font-en">${thisTimeScore}</span>`;
+          // 歷史分數
+          newHighScore =
+            thisTimeScore > newHighScore ? thisTimeScore : newHighScore;
+          localStorage.setItem("newHighScore", newHighScore);
+          highScore.innerHTML = `🏅 歷史高分：<span class="font-en">${newHighScore}</span>`;
+        } else {
+          // 十次內成功猜到答案，遊戲結束
+          answerText.textContent = "猜對了 🥳 你太厲害了！";
+          answerText.style.fontSize = "60px";
+          answerText.style.left = "32%";
+          document
+            .querySelectorAll(
+              ".btn--restart,.btn--rule,.game-info,.img-question,.guess-area"
+            )
+            .forEach((e) => {
+              e.classList.add("hidden");
+            });
+          document.querySelector(".score-area").style.right = "54%";
+          document.querySelector(".score-area").style.bottom = "185px";
 
-        const calcScore = function (remainedChance) {
-          if (selectedDifficulty === 1) {
-            return remainedChance;
-          } else if (selectedDifficulty === 2) {
-            return remainedChance * 2;
-          } else if (selectedDifficulty === 3) {
-            return remainedChance * 3;
-          }
-        };
-        const thisTimeScore = calcScore(remainedChance);
-        chanceText.innerHTML = `💯 本次分數：<span class="font-en">${thisTimeScore}</span>`;
-        newHighScore =
-          thisTimeScore > newHighScore ? thisTimeScore : newHighScore;
-        localStorage.setItem("newHighScore", newHighScore);
-        highScore.innerHTML = `🏅 歷史高分：<span class="font-en">${newHighScore}</span>`;
-        btnAgain.classList.remove("hidden");
-        btnAgain.addEventListener("click", function () {
-          location.reload();
-        });
-        document.querySelector(".answer").textContent = answer;
+          const calcScore = function (remainedChance) {
+            if (selectedDifficulty === 1) {
+              return remainedChance;
+            } else if (selectedDifficulty === 2) {
+              return remainedChance * 2;
+            } else if (selectedDifficulty === 3) {
+              return remainedChance * 3;
+            }
+          };
+          const thisTimeScore = calcScore(remainedChance);
+          chanceText.innerHTML = `💯 本次分數：<span class="font-en">${thisTimeScore}</span>`;
+          newHighScore =
+            thisTimeScore > newHighScore ? thisTimeScore : newHighScore;
+          localStorage.setItem("newHighScore", newHighScore);
+          highScore.innerHTML = `🏅 歷史高分：<span class="font-en">${newHighScore}</span>`;
+          btnAgain.classList.remove("hidden");
+          btnAgain.addEventListener("click", function () {
+            location.reload();
+          });
+          document.querySelector(".answer").textContent = answer;
+        }
       }
     });
   }
+  // 第二頁的 rule modal 控制
   btnRestart.addEventListener("click", function () {
     location.reload();
+  });
+  btnRuleP2.addEventListener("click", () => {
+    modalRule.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+  });
+  btnClose.addEventListener("click", () => {
+    modalRule.classList.add("hidden");
+    overlay.classList.add("hidden");
+  });
+  overlay.addEventListener("click", () => {
+    modalRule.classList.add("hidden");
+    overlay.classList.add("hidden");
   });
 });
