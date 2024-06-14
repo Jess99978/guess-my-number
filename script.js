@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     overlay.addEventListener("click", () => {
       modalRule.classList.add("hidden");
+      modalDifficulty.classList.add("hidden");
       overlay.classList.add("hidden");
     });
     btnStartGame.addEventListener("click", function () {
@@ -179,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             thisTimeScore > newHighScore ? thisTimeScore : newHighScore;
           localStorage.setItem("newHighScore", newHighScore);
           highScore.innerHTML = `🏅 歷史高分：<span class="font-en">${newHighScore}</span>`;
+          document.querySelector(".answer").textContent = answer;
         } else {
           // 十次內成功猜到答案，遊戲結束
           answerText.textContent = "猜對了 🥳 你太厲害了！";

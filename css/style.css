@@ -13,6 +13,11 @@ body {
   height: 100vh;
   position: relative;
 }
+@media (max-width: 1440px) {
+  body {
+    background: url(../image/background-img-1440px.png);
+  }
+}
 
 h1,
 h2,
@@ -40,6 +45,11 @@ p {
   gap: 80px;
   max-width: 660px;
 }
+@media (max-width: 1440px) {
+  .main {
+    gap: 60px;
+  }
+}
 
 .title {
   display: flex;
@@ -48,6 +58,11 @@ p {
   align-items: center;
   gap: 30px;
   color: #ffffff;
+}
+@media (max-width: 1440px) {
+  .title {
+    gap: 25px;
+  }
 }
 .title h1 {
   font-size: 96px;
@@ -127,11 +142,22 @@ p {
   padding: 30px 40px;
   gap: 25px;
 }
+@media (max-width: 1440px) {
+  .modal.rule {
+    padding: 20px 30px;
+    gap: 20px;
+  }
+}
 .modal.difficulty {
   width: 37.5%;
   padding: 65px 40px;
   gap: 25px;
   top: 30%;
+}
+@media (max-width: 1440px) {
+  .modal.difficulty {
+    width: 47.5%;
+  }
 }
 
 .difficulty h3 {
@@ -153,7 +179,6 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 16px;
 }
 .rule__content h3 {
   font-size: 28px;

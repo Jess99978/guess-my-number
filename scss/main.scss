@@ -122,6 +122,11 @@ p {
     position: absolute;
     top: calc(50% - 220px);
     left: calc(50% - 235px);
+    @media (max-width: 1440px) {
+      font-size: 52px;
+      top: calc(50% - 210px);
+      left: calc(50% - 220px);
+    }
   }
 }
 .guess-area {
@@ -156,6 +161,10 @@ p {
   position: absolute;
   right: 250px;
   bottom: 215px;
+  @media (max-width: 1440px) {
+    bottom: 185px;
+    gap: 20px;
+  }
 }
 // ---------------modal-----------------------
 .modal {
@@ -171,6 +180,10 @@ p {
     gap: 25px;
     right: 30%;
     top: 20%;
+    @media (max-width: 1440px) {
+      right: 27%;
+      top: 16%;
+    }
   }
 }
 .rule__content {
@@ -210,7 +223,7 @@ p {
     left: 15%;
   }
   &-right {
-        top: 10%;
+    top: 10%;
     right: 15%;
     transform: rotate(270deg);
   }

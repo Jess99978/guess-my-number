@@ -12,6 +12,9 @@ body {
   @include flex-center;
   height: 100vh;
   position: relative;
+  @media (max-width: 1440px) {
+    background: url(../image/background-img-1440px.png);
+  }
 }
 h1,
 h2,
@@ -36,11 +39,17 @@ p {
   @include flex-center(column);
   gap: 80px;
   max-width: 660px;
+  @media (max-width: 1440px) {
+    gap: 60px;
+  }
 }
 .title {
   @include flex-center(column);
   gap: 30px;
   color: $white;
+  @media (max-width: 1440px) {
+    gap: 25px;
+  }
   h1 {
     font-size: 96px;
     text-shadow: $text-shadow;
@@ -105,12 +114,19 @@ p {
   &.rule {
     padding: 30px 40px;
     gap: 25px;
+    @media (max-width: 1440px) {
+      padding: 20px 30px;
+      gap: 20px;
+    }
   }
   &.difficulty {
     width: 37.5%;
     padding: 65px 40px;
     gap: 25px;
     top: 30%;
+    @media (max-width: 1440px) {
+      width: 47.5%;
+    }
   }
 }
 .difficulty {
@@ -120,8 +136,8 @@ p {
   }
 }
 .warning {
-    position: absolute;
-    bottom: 15%;
+  position: absolute;
+  bottom: 15%;
   color: #9d3535;
   font-size: 16px;
   font-weight: 600;
@@ -129,7 +145,6 @@ p {
 }
 .rule__content {
   @include flex-center(column, $align: flex-start);
-  gap: 16px;
   h3 {
     font-size: 28px;
   }

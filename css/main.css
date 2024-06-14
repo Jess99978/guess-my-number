@@ -136,6 +136,13 @@ p {
   top: calc(50% - 220px);
   left: calc(50% - 235px);
 }
+@media (max-width: 1440px) {
+  .answer-text {
+    font-size: 52px;
+    top: calc(50% - 210px);
+    left: calc(50% - 220px);
+  }
+}
 
 .guess-area {
   display: flex;
@@ -177,6 +184,12 @@ p {
   right: 250px;
   bottom: 215px;
 }
+@media (max-width: 1440px) {
+  .score-area {
+    bottom: 185px;
+    gap: 20px;
+  }
+}
 
 .modal {
   display: flex;
@@ -195,6 +208,12 @@ p {
   gap: 25px;
   right: 30%;
   top: 20%;
+}
+@media (max-width: 1440px) {
+  .modal.rule {
+    right: 27%;
+    top: 16%;
+  }
 }
 
 .rule__content {
