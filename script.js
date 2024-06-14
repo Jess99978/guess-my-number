@@ -117,14 +117,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       } else if (inputNumber > answer) {
         answerText.textContent = "太大了😮！試個小一點的數字看看";
-        answerText.style.fontSize = "48px";
-        answerText.style.left = "28%";
+        answerText.style.fontSize = "2.75rem";
         remainedChance--;
         chance.textContent = remainedChance;
       } else if (inputNumber < answer) {
         answerText.textContent = "太小了😮！試個大一點的數字看看！";
-        answerText.style.fontSize = "48px";
-        answerText.style.left = "28%";
+        answerText.style.fontSize = "2.75rem";
         remainedChance--;
         chance.textContent = remainedChance;
       } else if (inputNumber === answer) {
@@ -132,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (inputNumber === answer && remainedChance > 9) {
           answerText.textContent = "一次命中 🫢！你快去買樂透！";
           answerText.style.fontSize = "60px";
-          answerText.style.left = "32%";
+          // answerText.style.left = "32%";
           document
             .querySelectorAll(
               ".btn--restart,.btn--rule,.game-info,.img-question,.guess-area"
@@ -168,11 +166,11 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.setItem("newHighScore", newHighScore);
           highScore.innerHTML = `🏅 歷史高分：<span class="font-en">${newHighScore}</span>`;
           document.querySelector(".answer").textContent = answer;
+          document.querySelector(".answer").style.fontSize = "8rem";
         } else {
           // 十次內成功猜到答案，遊戲結束
           answerText.textContent = "猜對了 🥳 你太厲害了！";
-          answerText.style.fontSize = "60px";
-          answerText.style.left = "32%";
+          answerText.style.fontSize = "3rem";
           document
             .querySelectorAll(
               ".btn--restart,.btn--rule,.game-info,.img-question,.guess-area"
@@ -203,6 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
             location.reload();
           });
           document.querySelector(".answer").textContent = answer;
+          document.querySelector(".answer").style.fontSize = "8rem"
         }
       }
     });

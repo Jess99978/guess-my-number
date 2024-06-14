@@ -1,5 +1,42 @@
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/JejuHallasan/JejuHallasan.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.font-en {
+  font-family: "Jeju Hallasan", sans-serif;
+}
+.font-zh {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 15px;
+  }
+}
 .modal {
   display: flex;
   flex-direction: column;
@@ -32,32 +69,8 @@
   line-height: normal;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
-  height: 100vh;
   background: linear-gradient(270deg, #070708 0%, #1A1C28 40%, #2D3248 100%);
-  position: relative;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0px;
-  padding: 0px;
-}
-
-.font-en {
-  font-family: "Jeju Hallasan", sans-serif;
-}
-.font-zh {
-  font-family: "Roboto", sans-serif;
 }
 
 .top-side {
@@ -69,6 +82,23 @@ p {
   padding: 20px 40px;
 }
 
+.game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.game__instruction {
+  font-size: 1.5rem;
+}
+.game__difficulty {
+  font-size: 1.25rem;
+}
+
 .btn-group {
   display: flex;
   flex-direction: row;
@@ -77,7 +107,7 @@ p {
   gap: 25px;
 }
 
-.btn {
+.btn--fill {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -106,33 +136,16 @@ p {
 }
 .btn--submit {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 .btn--again {
   color: #ffffff;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 500;
   position: absolute;
   right: 40%;
   top: 73%;
-}
-
-.game-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  color: #ffffff;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-.game__instruction {
-  font-size: 24px;
-}
-.game__difficulty {
-  font-size: 20px;
 }
 
 .line {
@@ -148,7 +161,7 @@ p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 100px;
+  font-size: 16.25rem;
   color: #ffffff;
   position: absolute;
   left: calc(50% - 176px);
@@ -160,20 +173,14 @@ p {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .answer-text {
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 600;
   color: #ffffff;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   position: absolute;
-  top: calc(50% - 220px);
-  left: calc(50% - 235px);
-}
-@media (max-width: 1440px) {
-  .answer-text {
-    font-size: 52px;
-    top: calc(50% - 210px);
-    left: calc(50% - 220px);
-  }
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .guess-area {

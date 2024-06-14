@@ -1,5 +1,42 @@
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/JejuHallasan/JejuHallasan.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.font-en {
+  font-family: "Jeju Hallasan", sans-serif;
+}
+.font-zh {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 15px;
+  }
+}
 .modal {
   display: flex;
   flex-direction: column;
@@ -32,41 +69,17 @@
   line-height: normal;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   background: url(../image/background-img.png);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  position: relative;
 }
 @media (max-width: 1440px) {
   body {
     background: url(../image/background-img-1440px.png);
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0px;
-  padding: 0px;
-}
-
-.font-en {
-  font-family: "Jeju Hallasan", sans-serif;
-}
-.font-zh {
-  font-family: "Roboto", sans-serif;
 }
 
 .main {
@@ -97,11 +110,11 @@ p {
   }
 }
 .title h1 {
-  font-size: 96px;
+  font-size: 6rem;
   text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4);
 }
 .title h2 {
-  font-size: 48px;
+  font-size: 3rem;
   text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -126,7 +139,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #3DB8A5;
   cursor: pointer;
   transition: 0.3s ease-out;
@@ -142,15 +155,15 @@ p {
   padding: 10px 15px;
   gap: 8px;
   position: absolute;
-  right: 21px;
-  bottom: 16px;
+  right: 1.25rem;
+  bottom: 1rem;
   border-radius: 10px;
   color: #ffffff;
   border: 4px solid #ffffff;
   background: linear-gradient(195deg, rgba(158, 218, 209, 0.1) 11.27%, rgba(61, 179, 162, 0.1) 90.4%);
   text-decoration: none;
   box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.25);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 .btn--start-game:hover {
@@ -183,7 +196,7 @@ p {
 }
 
 .difficulty h3 {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -191,7 +204,7 @@ p {
   position: absolute;
   bottom: 15%;
   color: #9d3535;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
 }
