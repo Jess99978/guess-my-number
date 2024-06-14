@@ -1,0 +1,24 @@
+.modal {
+  @include flex-center(column, $align: flex-start);
+  border-radius: $border-radius-lg;
+  background: $dark-green;
+  box-shadow: $modal-shadow;
+  color: $white;
+  position: absolute;
+  z-index: 10;
+  &.rule {
+    padding: 30px 40px;
+    gap: 10px;
+    left: calc(50% - 362px);
+  }
+}
+.rule__content {
+  @include flex-center(column, $align: flex-start);
+  h3 {
+    font-size: 28px;
+  }
+  li {
+    font-size: 20px;
+    line-height: normal;
+  }
+}

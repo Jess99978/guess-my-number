@@ -1,5 +1,37 @@
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/JejuHallasan/JejuHallasan.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+  background: #2F958F;
+  box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  position: absolute;
+  z-index: 10;
+}
+.modal.rule {
+  padding: 30px 40px;
+  gap: 10px;
+  left: calc(50% - 362px);
+}
+
+.rule__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.rule__content h3 {
+  font-size: 28px;
+}
+.rule__content li {
+  font-size: 20px;
+  line-height: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -138,16 +170,6 @@ p {
   position: absolute;
   z-index: 10;
 }
-.modal.rule {
-  padding: 30px 40px;
-  gap: 25px;
-}
-@media (max-width: 1440px) {
-  .modal.rule {
-    padding: 20px 30px;
-    gap: 20px;
-  }
-}
 .modal.difficulty {
   width: 37.5%;
   padding: 65px 40px;
@@ -172,20 +194,6 @@ p {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
-}
-
-.rule__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.rule__content h3 {
-  font-size: 28px;
-}
-.rule__content li {
-  font-size: 24px;
-  line-height: normal;
 }
 
 .overlay {

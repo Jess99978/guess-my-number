@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "variables";
 @import "mixins";
+@import "modal";
 
 * {
   box-sizing: border-box;
@@ -167,35 +168,35 @@ p {
   }
 }
 // ---------------modal-----------------------
-.modal {
-  @include flex-center(column, $align: flex-start);
-  border-radius: $border-radius-lg;
-  background: $dark-green;
-  box-shadow: $modal-shadow;
-  color: $white;
-  position: absolute;
-  z-index: 10;
-  &.rule {
-    padding: 30px 40px;
-    gap: 25px;
-    right: 30%;
-    top: 20%;
-    @media (max-width: 1440px) {
-      right: 27%;
-      top: 16%;
-    }
-  }
-}
-.rule__content {
-  @include flex-center(column, $align: flex-start);
-  h3 {
-    font-size: 28px;
-  }
-  li {
-    font-size: 20px;
-    line-height: normal;
-  }
-}
+// .modal {
+//   @include flex-center(column, $align: flex-start);
+//   border-radius: $border-radius-lg;
+//   background: $dark-green;
+//   box-shadow: $modal-shadow;
+//   color: $white;
+//   position: absolute;
+//   z-index: 10;
+//   &.rule {
+//     padding: 30px 40px;
+//     gap: 25px;
+//     right: 30%;
+//     top: 20%;
+//     @media (max-width: 1440px) {
+//       right: 27%;
+//       top: 16%;
+//     }
+//   }
+// }
+// .rule__content {
+//   @include flex-center(column, $align: flex-start);
+//   h3 {
+//     font-size: 28px;
+//   }
+//   li {
+//     font-size: 20px;
+//     line-height: normal;
+//   }
+// }
 .svg {
   &__close {
     position: absolute;

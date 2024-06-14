@@ -1,13 +1,10 @@
 "use strict";
 const btnStart = document.querySelector(".btn-start");
-const btnRule = document.querySelector(".btn-rule");
-const btnRuleP2 = document.querySelector(".btn--rule");
-const btnClose = document.querySelector(".svg__close");
+const btnRule = document.querySelector(".btn--rule");
 const btnStartGame = document.querySelector(".btn--start-game");
 const btnSubmit = document.querySelector(".btn--submit");
 const btnRestart = document.querySelector(".btn--restart");
 const btnAgain = document.querySelector(".btn--again");
-const modalRule = document.querySelector(".rule");
 const modalDifficulty = document.querySelector(".difficulty");
 const overlay = document.querySelector(".overlay");
 const warning = document.querySelector(".warning");
@@ -34,18 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
       overlay.classList.remove("hidden");
       modalDifficulty.classList.remove("hidden");
     });
-    btnRule.addEventListener("click", () => {
-      modalRule.classList.remove("hidden");
-      overlay.classList.remove("hidden");
-    });
-    btnClose.addEventListener("click", () => {
-      modalRule.classList.add("hidden");
-      overlay.classList.add("hidden");
-    });
     overlay.addEventListener("click", () => {
-      modalRule.classList.add("hidden");
       modalDifficulty.classList.add("hidden");
-      overlay.classList.add("hidden");
     });
     btnStartGame.addEventListener("click", function () {
       const selectedValue = document.querySelector(
@@ -220,20 +207,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  // 第二頁的 rule modal 控制
+  // 第二頁的按鈕控制
   btnRestart.addEventListener("click", function () {
     location.reload();
-  });
-  btnRuleP2.addEventListener("click", () => {
-    modalRule.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  });
-  btnClose.addEventListener("click", () => {
-    modalRule.classList.add("hidden");
-    overlay.classList.add("hidden");
-  });
-  overlay.addEventListener("click", () => {
-    modalRule.classList.add("hidden");
-    overlay.classList.add("hidden");
   });
 });
