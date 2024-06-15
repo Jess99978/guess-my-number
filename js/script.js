@@ -52,6 +52,7 @@ const animateControl = function (
 let selectedDifficulty = 0;
 let remainedChance = 10;
 let newHighScore = localStorage.getItem("newHighScore");
+newHighScore = newHighScore ? Number(newHighScore) : 0;
 
 document.addEventListener("DOMContentLoaded", function () {
   const page = document.body.dataset.page;
