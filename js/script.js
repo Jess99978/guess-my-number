@@ -22,13 +22,13 @@ const imgCelebrate = document.querySelectorAll(".img-celebrate");
 const loseStyle =
   "linear-gradient(195deg, rgba(96, 27, 61) 11.27%, rgba(198, 56, 126) 90.4%)";
 // audio
-const clickSound = new Audio("audio/poka02.mp3");
-const clickSound2 = new Audio("audio/powerup01.mp3");
-const submitSound = new Audio("audio/select08.mp3");
-const wrongSound = new Audio("audio/blip03.mp3");
-const winGameSound = new Audio("audio/long_clap1.mp3");
-const celebrateSound = new Audio("audio/stadium_fireworks.mp3");
-const loseGameSound = new Audio("audio/requiem2.mp3");
+const clickSound = new Audio("../audio/poka02.mp3");
+const clickSound2 = new Audio("../audio/powerup01.mp3");
+const submitSound = new Audio("../audio/select08.mp3");
+const wrongSound = new Audio("../audio/blip03.mp3");
+const winGameSound = new Audio("../audio/long_clap1.mp3");
+const celebrateSound = new Audio("../audio/stadium_fireworks.mp3");
+const loseGameSound = new Audio("../audio/requiem2.mp3");
 // function
 const hiddenElement = function (elements) {
   document.querySelectorAll(elements).forEach((element) => {
