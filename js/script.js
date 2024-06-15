@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.addEventListener("click", () => {
       modalDifficulty.classList.add("hidden");
     });
-    const radioBtn = document.querySelectorAll(".radio__group").forEach(e => {
+   document.querySelectorAll(".radio__group").forEach(e => {
       e.addEventListener("click", () => {
         clickSound.play();
       })
