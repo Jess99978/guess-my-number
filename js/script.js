@@ -21,6 +21,15 @@ const line = document.querySelector(".line");
 const imgCelebrate = document.querySelectorAll(".img-celebrate");
 const loseStyle =
   "linear-gradient(195deg, rgba(96, 27, 61) 11.27%, rgba(198, 56, 126) 90.4%)";
+// audio
+const clickSound = new Audio("../audio/poka02.mp3");
+const clickSound2 = new Audio("../audio/powerup01.mp3");
+const submitSound = new Audio("../audio/select08.mp3");
+const wrongSound = new Audio("../audio/blip03.mp3");
+const winGameSound = new Audio("../audio/long_clap1.mp3");
+const celebrateSound = new Audio("../audio/stadium_fireworks.mp3")
+const loseGameSound = new Audio("../audio/requiem2.mp3");
+// function
 const hiddenElement = function (elements) {
   document.querySelectorAll(elements).forEach((element) => {
     element.classList.add("hidden");
@@ -59,12 +68,18 @@ document.addEventListener("DOMContentLoaded", function () {
   if (page === "page1") {
     //  ---------modal control---------------
     btnStart.addEventListener("click", function () {
+      clickSound2.play();
       overlay.classList.remove("hidden");
       modalDifficulty.classList.remove("hidden");
     });
     overlay.addEventListener("click", () => {
       modalDifficulty.classList.add("hidden");
     });
+    const radioBtn = document.querySelectorAll(".radio__group").forEach(e => {
+      e.addEventListener("click", () => {
+        clickSound.play();
+      })
+    })
     btnStartGame.addEventListener("click", function () {
       const selectedValue = document.querySelector(
         "input[name=difficulty]:checked"
@@ -75,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         location.href = "./main.html";
       } else {
         warning.classList.remove("hidden");
+        wrongSound.play();
       }
     });
   } else if (page === "page2") {
@@ -106,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`本次猜的數字：${inputNumber}`);
       // 驗證使用者填入範圍外的數字的情況
       if (selectedDifficulty === 1 && (inputNumber <= 0 || inputNumber > 20)) {
+        submitSound.play();
         answerText.innerHTML = `請輸入 <span class="font-en">1-20</span> 的數字`;
         answerText.style.fontSize = "3.125rem";
         animateControl(answerText, "animate__headShake", "1s");
@@ -114,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedDifficulty === 2 &&
         (inputNumber <= 0 || inputNumber > 50)
       ) {
+        submitSound.play();
         answerText.innerHTML = `請輸入 <span class="font-en">1-50</span> 的數字`;
         answerText.style.fontSize = "3.125rem";
         animateControl(answerText, "animate__headShake", "1s");
@@ -122,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedDifficulty === 3 &&
         (inputNumber <= 0 || inputNumber > 100)
       ) {
+        submitSound.play();
         answerText.innerHTML = `請輸入 <span class="font-en">1-100</span> 的數字`;
         answerText.style.fontSize = "3.125rem";
         animateControl(answerText, "animate__headShake", "1s");
@@ -130,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // ------遊戲執行判斷---------------
       // 用完十次機會，遊戲結束
       if (inputNumber !== answer && remainedChance <= 1) {
+        loseGameSound.play();
         answerText.textContent = "Game Over";
         answerText.classList.remove("font-zh");
         answerText.classList.add("font-en");
@@ -139,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         setGameOverBackground(loseStyle);
         // 玩家輸了之後，點一下中間顯示正解
-        // ! "animate__hinge" 效果不好的話就改成 "animate__swing"
         answerBox.style.cursor = "pointer";
         animateControl(answerText, "animate__hinge", "1.2s");
         answerBox.addEventListener("click", () => {
@@ -148,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
           hiddenElement(".img-question");
         });
       } else if (inputNumber > answer) {
+        wrongSound.play();
         animateControl(input, "animate__swing", "0.7s");
         answerText.textContent = "太大了😮！試個小一點的數字看看";
         answerText.style.fontSize = "2.75rem";
@@ -155,6 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chance.textContent = remainedChance;
         animateControl(chanceText, "animate__flash", "1s");
       } else if (inputNumber < answer) {
+        wrongSound.play();
         animateControl(input, "animate__swing", "0.7s");
         answerText.textContent = "太小了😮！試個大一點的數字看看！";
         answerText.style.fontSize = "2.75rem";
@@ -201,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
         answerBox.textContent = answer;
         // 一次命中
         if (inputNumber === answer && remainedChance > 9) {
+          celebrateSound.play();
           answerText.textContent = "一次命中 🫢！你快去買樂透！";
           setWinStyle();
           animateControl(answerBox, "animate__backInLeft", "0.8s");
@@ -211,6 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         } else {
           // 十次內成功猜到答案，遊戲結束
+          winGameSound.play();
           answerText.textContent = "猜對了 🥳 你太厲害了！";
           setWinStyle();
           animateControl(answerBox, "animate__bounce", "1.2s");
