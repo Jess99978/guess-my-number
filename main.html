@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>猜數字遊戲</title>
-    <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon" />
     <!-- normalize css -->
     <link
       rel="stylesheet"
@@ -16,6 +16,11 @@
 
     <!-- css -->
     <link rel="stylesheet" href="./css/main.css" />
+    <!-- animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body data-page="page2">
     <div class="overlay hidden"></div>
@@ -78,9 +83,13 @@
       </div>
     </div>
     <div class="line"></div>
-    <h1 class="answer-text">猜猜我是多少！</h1>
+    <div class="animate-answer-text">
+      <h1 class="answer-text">猜猜我是多少！</h1>
+    </div>
+    <div class="animate-answer-box">
     <div class="answer font-en">
       <img src="./image/svg-question-mark.png" alt="" class="img-question" />
+    </div>
     </div>
     <div class="guess-area">
       <input type="number" name="" id="" class="input-number" />

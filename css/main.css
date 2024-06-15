@@ -169,10 +169,6 @@ body {
   align-items: center;
   font-size: 8rem;
   color: #ffffff;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(50% - 107px);
   width: 253px;
   height: 204px;
   background: #2F958F;
@@ -184,6 +180,15 @@ body {
   font-weight: 600;
   color: #ffffff;
   letter-spacing: 2px;
+}
+
+.animate-answer-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(50% - 107px);
+}
+.animate-answer-text {
   position: absolute;
   top: 28%;
   left: 50%;

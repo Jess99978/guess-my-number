@@ -82,10 +82,6 @@ body {
   @include flex-center;
   font-size: 8rem;
   color: $white;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(50% - 107px);
   width: 253px;
   height: 204px;
   background: $dark-green;
@@ -96,6 +92,16 @@ body {
     font-weight: 600;
     color: $white;
     letter-spacing: 2px;
+  }
+}
+.animate {
+  &-answer-box{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(50% - 107px);
+  }
+  &-answer-text {
     position: absolute;
     top: 28%;
     left: 50%;
