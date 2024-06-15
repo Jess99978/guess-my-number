@@ -22,13 +22,13 @@ const imgCelebrate = document.querySelectorAll(".img-celebrate");
 const loseStyle =
   "linear-gradient(195deg, rgba(96, 27, 61) 11.27%, rgba(198, 56, 126) 90.4%)";
 // audio
-const clickSound = new Audio("../audio/poka02.mp3");
-const clickSound2 = new Audio("../audio/powerup01.mp3");
-const submitSound = new Audio("../audio/select08.mp3");
-const wrongSound = new Audio("../audio/blip03.mp3");
-const winGameSound = new Audio("../audio/long_clap1.mp3");
-const celebrateSound = new Audio("../audio/stadium_fireworks.mp3")
-const loseGameSound = new Audio("../audio/requiem2.mp3");
+const clickSound = new Audio("audio/poka02.mp3");
+const clickSound2 = new Audio("audio/powerup01.mp3");
+const submitSound = new Audio("audio/select08.mp3");
+const wrongSound = new Audio("audio/blip03.mp3");
+const winGameSound = new Audio("audio/long_clap1.mp3");
+const celebrateSound = new Audio("audio/stadium_fireworks.mp3");
+const loseGameSound = new Audio("audio/requiem2.mp3");
 // function
 const hiddenElement = function (elements) {
   document.querySelectorAll(elements).forEach((element) => {
@@ -68,18 +68,22 @@ document.addEventListener("DOMContentLoaded", function () {
   if (page === "page1") {
     //  ---------modal control---------------
     btnStart.addEventListener("click", function () {
-      clickSound2.play();
+      clickSound2
+        .play()
+        .catch((error) => console.error("音效播放失敗:", error));
       overlay.classList.remove("hidden");
       modalDifficulty.classList.remove("hidden");
     });
     overlay.addEventListener("click", () => {
       modalDifficulty.classList.add("hidden");
     });
-   document.querySelectorAll(".radio__group").forEach(e => {
+    document.querySelectorAll(".radio__group").forEach((e) => {
       e.addEventListener("click", () => {
-        clickSound.play();
-      })
-    })
+        clickSound
+          .play()
+          .catch((error) => console.error("音效播放失敗:", error));
+      });
+    });
     btnStartGame.addEventListener("click", function () {
       const selectedValue = document.querySelector(
         "input[name=difficulty]:checked"
