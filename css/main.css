@@ -6,7 +6,6 @@
 
 html {
   font-size: 16px;
-  font-weight: 500;
 }
 
 body {
@@ -67,6 +66,13 @@ p {
 .rule__content li {
   font-size: 20px;
   line-height: normal;
+}
+
+.svg__close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  cursor: pointer;
 }
 
 body {
@@ -144,7 +150,7 @@ body {
   font-size: 1.75rem;
   font-weight: 500;
   position: absolute;
-  right: 40%;
+  right: 39%;
   top: 73%;
 }
 
@@ -161,10 +167,11 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 16.25rem;
+  font-size: 8rem;
   color: #ffffff;
   position: absolute;
-  left: calc(50% - 176px);
+  left: 50%;
+  transform: translateX(-50%);
   top: calc(50% - 107px);
   width: 253px;
   height: 204px;
@@ -178,7 +185,7 @@ body {
   color: #ffffff;
   letter-spacing: 2px;
   position: absolute;
-  top: 30%;
+  top: 28%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -230,13 +237,6 @@ body {
   }
 }
 
-.svg__close {
-  position: absolute;
-  right: 25px;
-  top: 20px;
-  cursor: pointer;
-}
-
 .overlay {
   position: absolute;
   width: 100vw;
@@ -250,16 +250,31 @@ body {
   position: absolute;
 }
 .img-celebrate-lg {
-  left: 23%;
+  left: 25%;
+}
+@media (max-width: 1440px) {
+  .img-celebrate-lg {
+    max-width: 700px;
+  }
 }
 .img-celebrate-left {
   top: 10%;
   left: 15%;
 }
+@media (max-width: 1440px) {
+  .img-celebrate-left {
+    max-width: 110px;
+  }
+}
 .img-celebrate-right {
   top: 10%;
   right: 15%;
   transform: rotate(270deg);
+}
+@media (max-width: 1440px) {
+  .img-celebrate-right {
+    max-width: 110px;
+  }
 }
 
 .hidden {

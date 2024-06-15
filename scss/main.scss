@@ -65,7 +65,7 @@ body {
     font-size: 1.75rem;
     font-weight: 500;
     position: absolute;
-    right: 40%;
+    right: 39%;
     top: 73%;
   }
 }
@@ -80,10 +80,11 @@ body {
 }
 .answer {
   @include flex-center;
-  font-size: 16.25rem;
+  font-size: 8rem;
   color: $white;
   position: absolute;
-  left: calc(50% - 176px);
+  left: 50%;
+  transform: translateX(-50%);
   top: calc(50% - 107px);
   width: 253px;
   height: 204px;
@@ -96,9 +97,9 @@ body {
     color: $white;
     letter-spacing: 2px;
     position: absolute;
-    top: 30%;
+    top: 28%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 }
 .guess-area {
@@ -139,43 +140,6 @@ body {
   }
 }
 // ---------------modal-----------------------
-// .modal {
-//   @include flex-center(column, $align: flex-start);
-//   border-radius: $border-radius-lg;
-//   background: $dark-green;
-//   box-shadow: $modal-shadow;
-//   color: $white;
-//   position: absolute;
-//   z-index: 10;
-//   &.rule {
-//     padding: 30px 40px;
-//     gap: 25px;
-//     right: 30%;
-//     top: 20%;
-//     @media (max-width: 1440px) {
-//       right: 27%;
-//       top: 16%;
-//     }
-//   }
-// }
-// .rule__content {
-//   @include flex-center(column, $align: flex-start);
-//   h3 {
-//     font-size: 28px;
-//   }
-//   li {
-//     font-size: 20px;
-//     line-height: normal;
-//   }
-// }
-.svg {
-  &__close {
-    position: absolute;
-    right: 25px;
-    top: 20px;
-    cursor: pointer;
-  }
-}
 .overlay {
   position: absolute;
   width: 100vw;
@@ -188,16 +152,25 @@ body {
 .img-celebrate {
   position: absolute;
   &-lg {
-    left: 23%;
+    left: 25%;
+    @media (max-width: 1440px) {
+      max-width: 700px;
+    }
   }
   &-left {
     top: 10%;
     left: 15%;
+    @media (max-width: 1440px) {
+      max-width: 110px;
+    }
   }
   &-right {
     top: 10%;
     right: 15%;
     transform: rotate(270deg);
+    @media (max-width: 1440px) {
+      max-width: 110px;
+    }
   }
 }
 

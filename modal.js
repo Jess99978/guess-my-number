@@ -54,19 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnClose = document.querySelector(".svg__close");
   const modalRule = document.querySelector(".rule");
   const overlay = document.querySelector(".overlay");
+  const closeModal = function () {
+    modalRule.classList.add("hidden");
+    overlay.classList.add("hidden");
+  };
   //  點擊按鈕顯示 modal
   btnRule.addEventListener("click", () => {
     modalRule.classList.remove("hidden");
     overlay.classList.remove("hidden");
   });
   //  點擊叉叉關閉 modal
-  btnClose.addEventListener("click", () => {
-    modalRule.classList.add("hidden");
-    overlay.classList.add("hidden");
-  });
+  btnClose.addEventListener("click", closeModal);
   //  點擊外層 overlay 關閉 modal
-  overlay.addEventListener("click", () => {
-    modalRule.classList.add("hidden");
-    overlay.classList.add("hidden");
-  });
-})
+  overlay.addEventListener("click", closeModal);
+});

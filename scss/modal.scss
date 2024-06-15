@@ -22,3 +22,11 @@
     line-height: normal;
   }
 }
+.svg {
+  &__close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    cursor: pointer;
+  }
+}

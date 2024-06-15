@@ -6,7 +6,6 @@
 
 html {
   font-size: 16px;
-  font-weight: 500;
 }
 
 body {
@@ -67,6 +66,13 @@ p {
 .rule__content li {
   font-size: 20px;
   line-height: normal;
+}
+
+.svg__close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  cursor: pointer;
 }
 
 body {
@@ -264,12 +270,6 @@ body {
   opacity: 1;
 }
 
-.svg__close {
-  position: absolute;
-  right: 25px;
-  top: 20px;
-  cursor: pointer;
-}
 .svg__difficulty {
   position: absolute;
   top: 15px;
