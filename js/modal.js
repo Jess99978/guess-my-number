@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnClose = document.querySelector(".svg__close");
   const modalRule = document.querySelector(".rule");
   const overlay = document.querySelector(".overlay");
-  const clickSound2 = new Audio("../powerup01.mp3");
+  const clickSound2 = new Audio(
+    "https://jess99978.github.io/guess-my-number/audio/powerup01.mp3"
+  );
   const closeModal = function () {
     modalRule.classList.add("hidden");
     overlay.classList.add("hidden");
