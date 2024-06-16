@@ -6,7 +6,7 @@
     </p>
 <p align="center">
   <a href="#功能">功能</a> •
-  <a href="#安裝及執行">安裝及執行</a> •
+  <a href="#安裝與執行">安裝與執行</a> •
   <a href="#使用說明">使用說明</a>
 </p>
 <p align="center">
