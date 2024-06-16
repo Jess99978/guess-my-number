@@ -4,6 +4,7 @@ const btnRule = document.querySelector(".btn--rule");
 const btnStartGame = document.querySelector(".btn--start-game");
 const btnSubmit = document.querySelector(".btn--submit");
 const btnRestart = document.querySelector(".btn--restart");
+const btnExit = document.querySelector(".btn--exit");
 const btnAgain = document.querySelector(".btn--again");
 const modalDifficulty = document.querySelector(".difficulty");
 const overlay = document.querySelector(".overlay");
@@ -52,6 +53,7 @@ const hiddenElement = function (elements) {
 const setGameOverBackground = function (backgroundColor) {
   line.style.background = backgroundColor;
   btnRestart.style.background = backgroundColor;
+  btnExit.style.background = backgroundColor;
   answerBox.style.background = backgroundColor;
 };
 const clickToReload = function (elements) {
@@ -83,8 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //  ---------modal control---------------
     btnStart.addEventListener("click", function () {
       clickSound2
-        .play()
-        .catch((error) => console.error("音效播放失敗:", error));
+        .play();
       overlay.classList.remove("hidden");
       modalDifficulty.classList.remove("hidden");
     });
@@ -94,8 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".radio__group").forEach((e) => {
       e.addEventListener("click", () => {
         clickSound
-          .play()
-          .catch((error) => console.error("音效播放失敗:", error));
+          .play();
       });
     });
     btnStartGame.addEventListener("click", function () {
@@ -119,6 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedDifficulty = Number(
       localStorage.getItem("selectedDifficulty")
     );
+    btnExit.addEventListener("click", function () {
+      location.href = "../index.html";
+    })
     clickToReload(".btn--restart");
     if (selectedDifficulty === 1) {
       difficultyText.textContent = "當前挑戰難度：🍼 幼幼班";
@@ -178,6 +181,13 @@ document.addEventListener("DOMContentLoaded", function () {
         setGameOverBackground(loseStyle);
         // 玩家輸了之後，點一下中間顯示正解
         answerBox.style.cursor = "pointer";
+        answerBox.addEventListener("mouseover", function () {
+          this.style.transition = "0.4s";
+          this.style.transform = "rotate(7deg)";
+        })
+         answerBox.addEventListener("mouseout", function () {
+           this.style.transform = "rotate(0deg)";
+         });
         animateControl(answerText, "animate__hinge", "1.2s");
         answerBox.addEventListener("click", () => {
           animateControl(answerBox, "animate__flipInY", "1.1s");
@@ -205,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const setWinStyle = function () {
           answerText.style.fontSize = "3.25rem";
           hiddenElement(
-            ".btn--restart,.btn--rule,.game-info,.img-question,.guess-area"
+            ".btn--restart,.btn--rule,.btn--exit,.game-info,.img-question,.guess-area"
           );
           document.querySelector(".score-area").style.right = "55%";
           document.querySelector(".score-area").style.bottom = "18%";

@@ -153,6 +153,9 @@ body {
   right: 39%;
   top: 73%;
 }
+.btn--exit {
+  padding-inline: 15px;
+}
 
 .line {
   width: 100%;
