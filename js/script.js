@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.getItem("selectedDifficulty")
     );
     btnExit.addEventListener("click", function () {
-      location.href = "../index.html";
+      location.href = "./index.html";
     })
     clickToReload(".btn--restart");
     if (selectedDifficulty === 1) {
