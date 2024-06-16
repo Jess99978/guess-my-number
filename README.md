@@ -6,8 +6,8 @@
     </p>
 <p align="center">
   <a href="#功能">功能</a> •
-  <a href="安裝及執行">安裝及執行</a> •
-  <a href="#使用說明">使用說明</a> •
+  <a href="#安裝及執行">安裝及執行</a> •
+  <a href="#使用說明">使用說明</a>
 </p>
 <p align="center">
 
@@ -29,7 +29,7 @@
    git clone https://github.com/Jess99978/guess-my-number.git
    ```
 2. 打開 `index.html` 來運行遊戲
-3. 或是直接從 [這裡](jess99978.github.io/guess-my-number/) 開始遊戲
+3. 或是直接從 [這裡](https://jess99978.github.io/guess-my-number/) 開始遊戲
 
 ## 使用說明
 
@@ -50,4 +50,5 @@
 當玩家猜中數字或達到猜測次數上限時，會顯示不同的結果
 
 ![成功猜中](image/success.gif)
+<br />
 **其他更多遊戲結果，等待玩家自行解鎖！**
